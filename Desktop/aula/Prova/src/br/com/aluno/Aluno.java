@@ -1,53 +1,34 @@
 package br.com.aluno;
 
-import java.util.Calendar;
-
+import br.com.curso.Curso;
 import br.com.endereco.Endereco;
 
-//CLASSE
 public class Aluno extends Endereco {
+	private String nomeAluno;
+	private int idadeAluno;
+	private Curso curso = new Curso();
 
-	// ATRIBUTOS
-
-	private String nome;
-	private int anoDeNascimento;
-	private int idade;
-	private double altura;
-
-	// METODOS
-	public String getNome() {
-		return nome;
+	public String getNomeAluno() {
+		return nomeAluno;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeAluno(String nomeAluno) {
+		this.nomeAluno = nomeAluno;
 	}
 
-	public int getAnoDeNascimento() {
-		return anoDeNascimento;
-
+	public int getIdadeAluno() {
+		return idadeAluno;
 	}
 
-	public void setAnoDeNascimento(int anoDeNascimento) {
-		this.anoDeNascimento = anoDeNascimento;
-		setIdade();
+	public void setIdadeAluno(int idadeAluno) {
+		this.idadeAluno = idadeAluno;
 	}
 
-	public int getIdade() {
-		return idade;
+	public Curso getCurso() {
+		return curso;
 	}
 
-	private void setIdade() {
-		Calendar calendar = Calendar.getInstance();
-		this.idade = calendar.get(Calendar.YEAR) - getAnoDeNascimento();
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
-
-	public double getAltura() {
-		return altura;
-	}
-
-	public void setAltura(double altura) {
-		this.altura = altura;
-	}
-
 }
